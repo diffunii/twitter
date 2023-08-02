@@ -1,9 +1,5 @@
-importScripts(
-  "https://www.gstatic.com/firebasejs/9.16.0/firebase-app-compat.js"
-);
-importScripts(
-  "https://www.gstatic.com/firebasejs/9.16.0/firebase-messaging-compat.js"
-);
+import { initializeApp } from "firebase/app";
+import { getMessaging, onBackgroundMessage } from "firebase/messaging/sw";
 
 const config = {
   apiKey: "AIzaSyBeM_8ldWDc8TKjDNdkQx4tFfJYCxmEk8I",
@@ -13,13 +9,10 @@ const config = {
   messagingSenderId: "761759590132",
   appId: "1:761759590132:web:36e1aa2e227c49330ce0a1",
 };
-const app = firebase.initializeApp(config);
-const messaging = firebase.messaging();
+const app = initializeApp(config);
+const messaging = getMessaging(app);
 
-messaging.onBackgroundMessage((payload) => {
-  const channel = new BroadcastChannel("sw-message");
-  channel.postMessage(payload.notification);
-
+onBackgroundMessage(messaging, (payload) => {
   console.log(
     "[firebase-messaging-sw.js] Received background message ",
     payload
@@ -31,5 +24,8 @@ messaging.onBackgroundMessage((payload) => {
     // icon: '/firebase-logo.png'
   };
 
-  self.registration.showNotification(notificationTitle, notificationOptions);
+  return self.registration.showNotification(
+    notificationTitle,
+    notificationOptions
+  );
 });
