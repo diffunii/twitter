@@ -26,7 +26,7 @@ self.addEventListener("push", function (e) {
 
 self.addEventListener("notificationclick", function (event) {
   console.log("notification click");
-  const url = "/";
+  const url = "/twitter/";
   event.notification.close();
   event.waitUntil(clients.openWindow(url));
 });
