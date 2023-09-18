@@ -1,0 +1,95 @@
+.tweetBox,
+.myTweetBox,
+.editBox {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 255px;
+  height: auto !important;
+  background-color: whitesmoke;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+
+  &.editBox {
+    flex-direction: row;
+  }
+  &.myTweetBox {
+    background-color: rgb(247, 246, 255);
+  }
+}
+
+.tweetBox::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-right-color: whitesmoke;
+  border-left: 0;
+  border-bottom: 0;
+  margin-top: -3px;
+  margin-left: -13px;
+}
+
+.myTweetBox::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border: 15px solid transparent;
+  border-left-color: rgb(247, 246, 255);
+  border-right: 0;
+  border-bottom: 0;
+  margin-top: -3px;
+  margin-right: -13px;
+}
+.userName {
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 5px;
+}
+.tweetContent {
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 5px;
+}
+
+.attachmentImg {
+  display: flex;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.tweetText {
+  display: inline-block;
+}
+
+.buttonBox {
+  display: flex;
+  margin-left: auto;
+}
+
+.editBtn {
+  all: unset;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.editText {
+  all: unset;
+  width: 160px;
+  height: 20px;
+  border: none;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  border-radius: 10px;
+  background-color: white;
+}

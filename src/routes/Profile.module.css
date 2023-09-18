@@ -1,0 +1,84 @@
+.userName {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.profile {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inputText {
+  all: unset;
+  width: 180px;
+  border: none;
+  padding: 10px;
+  margin: 10px 10px 10px 0px;
+  border-radius: 10px;
+  background-color: whitesmoke;
+
+  &::placeholder {
+    font-size: 12px;
+  }
+}
+
+.confirm {
+  all: unset;
+  width: 40px;
+  height: 20px;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background-color: #dfdfdf;
+  }
+}
+
+.notiSpan {
+  width: 180px;
+  height: 40px;
+  padding: 10px;
+  margin: 10px 10px 10px 0px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.notiBtn {
+  all: unset;
+  width: 10px;
+  height: 20px;
+  padding: 10px;
+  margin: 10px 0px 10px 0px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    background-color: #dfdfdf;
+  }
+}
+
+.logOut {
+  all: unset;
+  display: flex;
+  margin-left: auto;
+  padding: 10px 20px 10px 20px;
+  background-color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
